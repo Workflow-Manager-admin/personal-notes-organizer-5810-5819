@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">android_frontend</string>
+    <string name="search_notes">Search notes...</string>
+    <string name="note_title">Title</string>
+    <string name="note_content">Write your note here...</string>
+    <string name="sort_by_title">Sort by Title</string>
+    <string name="sort_by_date">Sort by Date</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+</resources>
