@@ -69,15 +69,15 @@ public class HomeFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.action_sort_title:
-                noteViewModel.sortBy(NoteViewModel.SortField.TITLE);
-                return true;
-            case R.id.action_sort_date:
-                noteViewModel.sortBy(NoteViewModel.SortField.DATE);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.action_sort_title) {
+            noteViewModel.sortBy(NoteViewModel.SortField.TITLE);
+            return true;
+        } else if (id == R.id.action_sort_date) {
+            noteViewModel.sortBy(NoteViewModel.SortField.DATE);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 }

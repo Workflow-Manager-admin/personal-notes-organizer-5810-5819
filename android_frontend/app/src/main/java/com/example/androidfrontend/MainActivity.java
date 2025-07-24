@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setUserInputEnabled(false); // Navigation only via bottom nav
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    viewPager.setCurrentItem(0, false);
-                    return true;
-                case R.id.navigation_categories:
-                    viewPager.setCurrentItem(1, false);
-                    return true;
+            int id = item.getItemId();
+            if (id == R.id.navigation_home) {
+                viewPager.setCurrentItem(0, false);
+                return true;
+            } else if (id == R.id.navigation_categories) {
+                viewPager.setCurrentItem(1, false);
+                return true;
             }
             return false;
         });
@@ -56,13 +56,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
-                        break;
-                    case 1:
-                        bottomNavigationView.setSelectedItemId(R.id.navigation_categories);
-                        break;
+                if (position == 0) {
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+                } else if (position == 1) {
+                    bottomNavigationView.setSelectedItemId(R.id.navigation_categories);
                 }
             }
         });

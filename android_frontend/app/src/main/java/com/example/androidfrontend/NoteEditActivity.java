@@ -49,15 +49,15 @@ public class NoteEditActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.action_save:
-                saveNote();
-                return true;
-            case R.id.action_delete:
-                deleteNote();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.action_save) {
+            saveNote();
+            return true;
+        } else if (id == R.id.action_delete) {
+            deleteNote();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
 
